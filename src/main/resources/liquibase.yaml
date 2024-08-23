@@ -1,0 +1,5 @@
+url: jdbc:postgresql://psql:5432/message
+username: postgres
+password: postgres
+driver: org.postgresql.Driver
+outputChangeLogFile: src/main/resources/db/changelog/liquibase-outputChangelog.xml

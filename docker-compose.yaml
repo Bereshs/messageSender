@@ -1,0 +1,20 @@
+services:
+  psql:
+    container_name: psql
+    image: postgres
+    environment:
+      - POSTGRES_USER=postgres
+      - POSTGRES_PASSWORD=postgres
+      - POSTGRES_DB=message
+    ports:
+      - 5431:5432
+  app:
+    build:
+      context: .
+      dockerfile: ./DockerFile
+    volumes:
+      - ./target/app.jar:/app.jar
+    ports:
+      - 8081:8080
+    depends_on:
+      - psql

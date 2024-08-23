@@ -1,0 +1,2 @@
+FROM openjdk:17-jdk-slim
+ENTRYPOINT ["java","-jar","/app.jar"]
